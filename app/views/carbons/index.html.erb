@@ -1,0 +1,31 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<br />
+<%= link_to "New Carbon", new_carbon_path, class: "btn btn-primary" %>
+<br />
+<br />
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Preview</th>
+      <th>Download Link</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @carbons.each do |carbon| %>
+      <tr>
+        <td><%= carbon.title %></td>
+        <td><%= carbon.description %></td>
+        <td><%= carbon.preview %></td>
+        <td><%= link_to "Download Carbon", carbon.attachment_url %></td>
+        <td><%= button_to "Delete", carbon, method: :delete, class: "btn btn-danger", confirm: "Delete '#{carbon.title}' permanently?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

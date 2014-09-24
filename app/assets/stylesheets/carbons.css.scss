@@ -1,0 +1,47 @@
+// Place all the styles related to the Carbons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+.container {
+  padding-top: 1.5em;
+}
+
+body {
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+// #bigvid {
+//   position: absolute;
+//   background-color: #000;
+//   height: 100%;
+//   width: 100%;
+// }
+
+video#bgVideo {
+  position: fixed; // Play the video in full screen mode
+  right: 0px; 
+  bottom: 0px;
+  width: auto;
+  height: auto;
+  // background: transparent url('windowlicker.jpg') no-repeat center center fixed; 
+  // background-size: cover;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -100; // Put the video behind all other elements
+}
+
+ 
+@media only screen and (max-width: 768px) {
+  video {
+    display:none;
+  }
+  body{
+    background-image:url("windowlicker.png");
+  }
+}

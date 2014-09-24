@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frato</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= google_webfonts_init({
+      google: ['Roboto Slab', 'Hammersmith One']
+      }) %>
+</head>
+<body>
+  <header>
+  <%= render 'partials/nav' %>
+  </header>
+
+  <%= video_tag "", muted: true, autoplay: true, loop: true%>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>
