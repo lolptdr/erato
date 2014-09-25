@@ -14,7 +14,7 @@
   <%= render 'partials/nav' %>
   </header>
 
-  <%= video_tag "", muted: true, autoplay: true, loop: true%>
+  <%= video_tag "", id: "bgVideo", muted: true, autoplay: true, loop: true %>
   <div class="container">
     <%= yield %>
   </div>
