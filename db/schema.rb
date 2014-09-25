@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140925171746) do
   create_table "sounds", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "attachment"
     t.integer  "carbon_id"
     t.datetime "created_at"
     t.datetime "updated_at"
