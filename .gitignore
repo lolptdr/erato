@@ -16,4 +16,5 @@
 /tmp
 
 # Ignore public/uploads
-/public/uploads/**/*
+/public*
+
