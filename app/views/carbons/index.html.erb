@@ -22,9 +22,9 @@
       <tr>
         <td><%= carbon.title %></td>
         <td><%= carbon.description %></td>
-        <td><%= image_tag carbon.preview_url(:thumb) if carbon.preview? %></td>
+        <td><%= image_tag carbon.attachment_url(:thumb) if carbon.attachment? %></td>
         <td><%= link_to "Download Carbon", carbon.attachment_url %></td>
-        <td><%= button_to "Delete", carbon, method: :delete, class: "btn btn-danger", confirm: "Delete '#{carbon.title}' permanently?" %></td>
+        <td><%= button_to "Delete", carbon, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{carbon.title}' permanently?"} %></td>
       </tr>
     <% end %>
   </tbody>
