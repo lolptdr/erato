@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Frato</title>
+  <title>Erato</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -10,10 +10,18 @@
       }) %>
 </head>
 <body>
-  <header>
-  <%= render 'partials/nav' %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "erato", '#', id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav pull-right">
+          <li><%= link_to "Home",   '#' %></li>
+          <li><%= link_to "Help",   '#' %></li>
+          <li><%= link_to "Log in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
   <%= video_tag "", id: "bgVideo", muted: true, autoplay: true, loop: true %>
   <div class="container">
     <%= yield %>
