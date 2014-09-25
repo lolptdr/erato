@@ -1,2 +1,22 @@
-<h1>Sounds#new</h1>
-<p>Find me in app/views/sounds/new.html.erb</p>
+<% if !@sound.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @sound.errors.full_message.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @sound, html: { multipart: true } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br />
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment%>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
