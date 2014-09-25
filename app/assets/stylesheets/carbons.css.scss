@@ -5,8 +5,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// .container {
-//   padding-top: 1.5em;
+// *, *:before, *:after {
+//   border: 1px solid red;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
 // }
 
 body {
