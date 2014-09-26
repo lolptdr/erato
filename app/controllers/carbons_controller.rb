@@ -9,7 +9,7 @@ class CarbonsController < ApplicationController
 
   def create
     @carbon = Carbon.new(carbon_params)
-
+    
     if @carbon.save
       redirect_to carbons_path, notice: "New image '#{@carbon.title}' has been uploaded."
     else

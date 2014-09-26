@@ -12,7 +12,7 @@
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <%= link_to "erato", '#', id: "logo" %>
+      <%= link_to "erato", '/', id: "logo" %>
       <nav>
         <ul class="nav navbar-nav pull-right">
           <li><%= link_to "Home",   '#' %></li>
@@ -23,8 +23,40 @@
     </div>
   </header>
   <%= video_tag "", id: "bgVideo", muted: true, autoplay: true, loop: true %>
-  <div class="container">
-    <%= yield %>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Begin page content -->
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <!--Scroll back to top-->
+      <div class="back-to-top" id="back-top">
+        <a href="javascript:void(0)" class="back-to-top">Top</a>
+      </div>
+      <script type="text/javascript">
+        $(function () {
+          $("#back-top").hide();
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 150) {
+                  $('#back-top').fadeIn();
+              } else {
+                  $('#back-top').fadeOut();
+              }
+          });
+        });
+        $('.back-to-top').click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'slow');
+        });
+      </script>
+      <!--end of Scroll back to top-->
+    </div>
   </div>
 </body>
+
+
 </html>
