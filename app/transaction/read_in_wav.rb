@@ -1,17 +1,17 @@
 require 'wavefile'
-include WaveFile
-
-SAMPLES_PER_BUFFER = 4096
+include WaveFile # To avoid prefixing classes with 'WaveFile::'
 
 class ReadInWav
+  SAMPLES_PER_BUFFER = 4096
+
   def self.run(sound)
-    Reader.new("my_file.wav").each_buffer(SAMPLE_FRAMES_PER_BUFFER) do |buffer|
+    Reader.new(sound.file.file).each_buffer(SAMPLES_PER_BUFFER) do |buffer|
       puts "Read #{buffer.samples.length} samples."
     end
   end
 
   def self.run_manually(sound)
-    reader = Reader.new("my_file.wav")
+    reader = Reader.new(sound.file.file)
     begin
       while true do
         buffer = reader.read(SAMPLES_PER_BUFFER)
@@ -26,13 +26,13 @@ class ReadInWav
     # Samples will be read as monophonic floating point,
     # regardless of the actual sample format on disk
     format = Format.new(:mono, :float, 44100)
-    reader = Reader.new("my_file.wav", format).each_buffer(SAMPLES_PER_BUFFER) do |buffer|
+    reader = Reader.new(sound.file.file, format).each_buffer(SAMPLES_PER_BUFFER) do |buffer|
       puts "Read #{buffer.samples.length} samples."
     end
   end
 
   def self.meta(sound)
-    info = Reader.info("#{sound.name}")
+    info = Reader.info(sound.file.file)
     puts "  Audio Format:        #{info.audio_format}"
     puts "  Channels:            #{info.channels}"
     puts "  Bits per sample:     #{info.bits_per_sample}"
@@ -50,7 +50,7 @@ class ReadInWav
   end
 
   def self.append(files)
-    Writer.new("append.wav", Format.new(:stereo, :pcm_16, 44100) do |writer|
+    Writer.new("append.wav", Format.new(:stereo, :pcm_16, 44100)) do |writer|
       FILES_TO_APPEND.each do |file_name|
         Reader.new(file_name).each_buffer(SAMPLES_PER_BUFFER) do |buffer|
           writer.write(buffer)

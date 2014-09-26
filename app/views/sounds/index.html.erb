@@ -1,8 +1,11 @@
+<%= javascript_include_tag "sound_preview.js" %>
+
 <% if !flash[:notice].blank? %>
   <div class="alert alert-info">
   <%= flash[:notice] %>
   </div>
 <% end %>
+<%= link_to "Carbons", "carbons#index" %>
 <br />
 <br />
 <br />
@@ -12,8 +15,9 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Preview</th>
       <th>Download Link</th>
+      <th>Preview</th>
+      <th>Select to Append</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -22,8 +26,11 @@
       <tr>
         <td><%= sound.name %></td>
         <td><%= sound.description %></td>
-        <td><%= image_tag sound.attachment_url(:thumb) if sound.attachment? %></td>
-        <td><%= link_to "Download Sound", sound.attachment_url %></td>
+        <td><%= link_to sound["attachment"], sound.attachment_url %></td>
+        <td><audio controls class="inline">
+          <source src= <%= sound.attachment_url %> type="audio/wav">
+        </td>
+        <td><%= check_box_tag(sound) %></td>
         <td><%= button_to "Delete", sound, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{sound.name}' permanently?"} %></td>
       </tr>
     <% end %>

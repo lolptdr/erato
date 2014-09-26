@@ -11,6 +11,8 @@ class SoundsController < ApplicationController
     @sound = Sound.new(sound_params)
 
     if @sound.save
+      check = ReadInWav.run(@sound.attachment)
+      check2 = ReadInWav.meta(@sound.attachment)
       redirect_to sounds_path, notice: "New sound '#{@sound.name}' has been uploaded."
     else
       render "new"
@@ -22,6 +24,13 @@ class SoundsController < ApplicationController
     @sound.destroy
     redirect_to sounds_path, notice: "The sound '#{@sound.name}' has been deleted."
   end
+
+  # def read_in
+  #   Soundster::SoundToImage params[:sound_url]
+  # end
+
+  
+
 
   private
   def sound_params
