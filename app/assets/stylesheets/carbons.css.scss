@@ -11,10 +11,6 @@
 //   box-sizing: border-box;
 // }
 
-body {
-  font-family: 'Hammersmith One', sans-serif;
-}
-
 video#bgVideo {
   position: fixed; // Play the video in full screen mode
   right: 0px; 
@@ -35,6 +31,7 @@ html {
 }
 
 body {
+  font-family: 'Hammersmith One', sans-serif;
   padding-top: 60px;
 }
 
@@ -99,7 +96,15 @@ p {
   text-decoration: none;
 }
 
+/* table */ 
 
+th {
+  text-align: center;
+}
+
+tbody {
+  text-align: center;
+}
 
 
 @media only screen and (max-width: 768px) {
