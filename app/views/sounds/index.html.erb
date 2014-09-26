@@ -8,7 +8,7 @@
 <br />
 <br />
 <%= link_to "New Sound", new_sound_path, class: "btn btn-primary" %>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -28,7 +28,7 @@
         <td><audio controls class="inline">
           <source src= <%= sound.attachment_url %> type="audio/wav">
         </td>
-        <td><%= check_box_tag(sound) %></td>
+        <td><%= check_box_tag(sound, class: 'checkbox')%></td>
         <td><%= button_to "Delete", sound, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{sound.name}' permanently?"} %></td>
       </tr>
     <% end %>
