@@ -7,6 +7,10 @@ class SoundsController < ApplicationController
     @sound = Sound.new
   end
 
+  def show
+    @sound = Sound.find(params[:id])
+  end
+
   def create
     @sound = Sound.new(sound_params)
 
@@ -18,6 +22,10 @@ class SoundsController < ApplicationController
       render "new"
     end
   end
+
+  def append
+    
+  end  
 
   def destroy
     @sound = Sound.find(params[:id])

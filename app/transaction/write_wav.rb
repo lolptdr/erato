@@ -5,10 +5,12 @@ include WaveFile
 class WriteWav
   SAMPLES_PER_BUFFER = 4096
   
-  def self.run(sound)
+  def self.run(input)
     # Write a 440Hz square wave beep
     cycle = ([0.5] * 50) + ([-0.5] * 50)
-    buffer = Buffer.new(cycle, Format.new(:mono, :float, 44100))
+
+    
+    buffer = Buffer.new(input, Format.new(:mono, :float, 44100))
     Writer.new("my_file.wav", Format.new(:mono, :pcm_16, 44100)) do |writer|
       100.times { writer.write(buffer) }
     end
@@ -28,7 +30,7 @@ class WriteWav
 
   end
 
-  def self.run_manually(sound)
+  def self.run_manually
     writer = Writer.new("my_file.wav", Format.new(:mono, :pcm_16, 44100))
 
     # Write a 440Hz square wave beep
