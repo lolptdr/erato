@@ -5,12 +5,14 @@ gem 'mini_magick', '3.8.0'
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'google-webfonts-rails'
 gem 'pg'
+gem 'wavefile'
 
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-byebug'
+  gem 'hirb'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

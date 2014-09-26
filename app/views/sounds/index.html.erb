@@ -1,0 +1,50 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<%= link_to "Carbons", "carbons#index" %>
+
+<%= yield %>
+<br />
+<br />
+<br />
+<%= link_to "New Sound", new_sound_path, class: "btn btn-primary" %>
+<button onclick="append()" class="btn btn-primary">Append Sounds</button>
+
+<!-- Table of Sounds -->
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Select</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Download Link</th>
+      <th>Preview</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sounds.each do |sound| %>
+      <tr data-id="<%= sound.id %>">
+      
+        <td><%= check_box_tag 'sound', 'yes', false, class: 'sound-pick' %></td>
+        <td><%= sound.name %></td>
+        <td><%= sound.description %></td>
+        <td><%= link_to sound["attachment"], sound.attachment_url %></td>
+        <td><audio controls class="inline">
+          <source src= <%= sound.attachment_url %> type="audio/wav">
+        </td>
+        <td><%= button_to "Delete", sound, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{sound.name}' permanently?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  function append() {
+    $('.sound-pick').click(function() {
+        $("#txtAge").toggle(this.checked);
+    });
+  }
+</script>

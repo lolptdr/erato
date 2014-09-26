@@ -5,13 +5,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// .container {
-//   padding-top: 1.5em;
+// *, *:before, *:after {
+//   border: 1px solid red;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
 // }
-
-body {
-  font-family: 'Hammersmith One', sans-serif;
-}
 
 video#bgVideo {
   position: fixed; // Play the video in full screen mode
@@ -33,6 +31,7 @@ html {
 }
 
 body {
+  font-family: 'Hammersmith One', sans-serif;
   padding-top: 60px;
 }
 
@@ -97,7 +96,15 @@ p {
   text-decoration: none;
 }
 
+/* table */ 
 
+th {
+  text-align: center;
+}
+
+tbody {
+  text-align: center;
+}
 
 
 @media only screen and (max-width: 768px) {
