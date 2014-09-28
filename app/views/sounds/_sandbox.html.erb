@@ -1,10 +1,9 @@
 <!-- Table of Sounds -->
 
-<%= link_to "New Sound", new_sound_path, class: "btn btn-primary" %>
+<%= link_to "Create Sounds to Waveform", new_waveform_path, class: "btn btn-primary" %>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Select</th>
       <th>Name</th>
       <th>Description</th>
       <th>Download Link</th>
@@ -13,15 +12,14 @@
     </tr>
   </thead>
   <tbody>
-    <% @sounds.each do |sound| %>
-      <tr data-id="<%= sound.id %>">
-        <td><%= check_box_tag 'sound', 'yes', false, class: 'sound-pick' %></td>
-        <td><%= sound.name %></td>
-        <td><%= sound.description %></td>
-        <td><%= link_to sound["attachment"], sound.attachment_url %></td>
+    <% @waveforms.each do |waveform| %>
+      <tr data-id="<%= waveform.id %>">
+        <td><%= waveform.name %></td>
+        <td><%= waveform.description %></td>
+        <td><%= link_to waveform["attachment"], waveform.attachment_url %></td>
         <td>
         </td>
-        <td><%= button_to "Delete", sound, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{sound.name}' permanently?"} %></td>
+        <td><%= button_to "Delete", waveform, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{waveform.name}' permanently?"} %></td>
       </tr>
     <% end %>
   </tbody>
