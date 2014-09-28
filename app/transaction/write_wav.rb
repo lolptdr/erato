@@ -18,7 +18,7 @@ class WriteWav
 
   def self.append(*sounds)
     OUTPUT_FORMAT = Format.new(:stereo, :pcm_16, 44100)
-    FILES_TO_APPEND = *sounds
+    FILES_TO_APPEND = *sounds # This will be an array
 
     Writer.new("appended_files.wav", OUTPUT_FORMAT) do |writer|
       FILES_TO_APPEND.each do |file_name|
