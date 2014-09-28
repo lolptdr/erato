@@ -7,6 +7,10 @@ gem 'google-webfonts-rails'
 gem 'pg'
 gem 'wavefile'
 
+gem 'ruby-audio'
+gem 'oily_png'
+gem 'chunky_png'
+
 
 group :development do
   gem 'better_errors'
