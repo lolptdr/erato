@@ -1,10 +1,13 @@
 class WaveformsController < ApplicationController
+
   def index
     @waveforms = Waveform.all
   end
 
   def new
     @waveform = Waveform.new
+    @waveform_sister = Wave
+
   end
 
   def show
@@ -12,11 +15,9 @@ class WaveformsController < ApplicationController
   end
 
   def create
-    @waveform = Waveform.new(sound_params)
+    @waveform = Waveform.new(waveform_params)
 
     if @waveform.save
-      check = ReadInWav.run(@waveform.attachment)
-      check2 = ReadInWav.meta(@waveform.attachment)
       redirect_to waveforms_path, notice: "New waveform '#{@waveform.name}' has been uploaded."
     else
       render "new"
@@ -28,8 +29,6 @@ class WaveformsController < ApplicationController
     @waveform.destroy
     redirect_to waveforms_path, notice: "The waveform '#{@waveform.name}' has been deleted."
   end
-
-
 
   private
   def waveform_params

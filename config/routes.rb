@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # post '/sounds', to: 'sounds#compound'
 
   resources :carbons, only: [:index, :new, :create, :destroy]
+  resources :waveforms, only: [:index, :new, :create, :destroy]
   root "carbons#index"
 end
