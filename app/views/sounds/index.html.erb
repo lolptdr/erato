@@ -4,6 +4,8 @@
   </div>
 <% end %>
 <%= link_to "Carbons", "carbons#index" %>
+<br />
+<%= link_to "Waveforms", "waveforms#index" %>
 
 <%= yield %>
 <br />
@@ -39,8 +41,6 @@
     <% end %>
   </tbody>
 </table>
-
-<%= render 'sounds/sandbox' %>
 
 <script type="text/javascript">
   var appendSounds = function() {
