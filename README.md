@@ -25,3 +25,10 @@ and [Neuroscience for Kids'](https://faculty.washington.edu/chudler/syne.html) w
 The waveshape gem by @benalavi was used.
 
 #### Transmogrification
+
+#### Examples of Audio Encoding Witin Images
+
+PiggyPack (Steganography):
+http://9ol.es/PiggyPack.html
+http://hackaday.com/2012/02/27/this-image-contains-a-hidden-audio-track/
+
