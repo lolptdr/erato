@@ -22,6 +22,6 @@ and [Neuroscience for Kids'](https://faculty.washington.edu/chudler/syne.html) w
 
 #### Sound to Image Converter
 
-The waveform gem by @benalavi was used.
+The waveshape gem by @benalavi was used.
 
 #### Transmogrification
