@@ -11,6 +11,8 @@ gem 'ruby-audio', '~> 1.6.1'
 gem 'oily_png'
 gem 'chunky_png'
 
+gem 'transloadit-rails'
+
 
 group :development do
   gem 'better_errors'
