@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :sounds
+  resources :sounds do
+    post :compound, :on => :collection
+  end
+  # post '/sounds', to: 'sounds#compound'
 
   resources :carbons, only: [:index, :new, :create, :destroy]
   root "carbons#index"

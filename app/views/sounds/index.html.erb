@@ -10,7 +10,7 @@
 <br />
 <br />
 <%= link_to "New Sound", new_sound_path, class: "btn btn-primary" %>
-<button onclick="append()" class="btn btn-primary">Append Sounds</button>
+<%= link_to "Append Sounds", 'sounds#compound', onclick: "appendSounds()", class: "btn btn-primary append-sounds" %>
 
 <!-- Table of Sounds -->
 <table class="table table-bordered table-hover">
@@ -27,7 +27,6 @@
   <tbody>
     <% @sounds.each do |sound| %>
       <tr data-id="<%= sound.id %>">
-      
         <td><%= check_box_tag 'sound', 'yes', false, class: 'sound-pick' %></td>
         <td><%= sound.name %></td>
         <td><%= sound.description %></td>
@@ -42,9 +41,15 @@
 </table>
 
 <script type="text/javascript">
-  function append() {
-    $('.sound-pick').click(function() {
-        $("#txtAge").toggle(this.checked);
-    });
-  }
+  var appendSounds = function() {
+    var collectSounds = [];
+    if ($('.sound-pick:checked').length > 0) {
+      $('.sound-pick:checked').closest('tr').each(function() {
+        var id = $(this).attr("data-id");
+        collectSounds.push(id);
+      });
+    }
+    console.log("appended sounds: ", collectSounds);
+    return collectSounds;
+  };
 </script>

@@ -23,8 +23,13 @@ class SoundsController < ApplicationController
     end
   end
 
-  def append
-    
+  def compound
+    puts "OVER HEREEEEEEEEEEEEEEEEEEEEEE"
+    # sound_params.each_with_index do |sound_id, index|
+    #   result[index] = Sound.find(sound_id.to_i)
+    # end
+    # p result
+    # together = WriteWav.append(*sounds)
   end  
 
   def destroy
