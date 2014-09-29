@@ -12,6 +12,7 @@ gem 'oily_png'
 gem 'chunky_png'
 
 gem 'transloadit-rails'
+gem 'bindata'
 
 
 group :development do
