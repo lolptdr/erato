@@ -20,12 +20,16 @@
    box-sizing: border-box;
 }*/
 
+body.background {
+  background: url('heartic.png') fixed;
+}
+
 /* Back-to-top button following scroll */
 .back-to-top {
   position: fixed;
   bottom: 15px;
   right: 20px;
-  /*link to your image, use correct path, if in doubt, use full path with http://...*/
+  /* if in doubt, use full path with http://...*/
   background: url('arrows.png') left top no-repeat; 
   width: 25px;
   height: 23px;
@@ -37,7 +41,7 @@
 }
 
 .back-to-top:hover { 
-  /*link to your image, use correct path, if in doubt, use full path with http://...*/
+  /* if in doubt, use full path with http://...*/
   background:url('arrows.png') left -23px no-repeat; 
 }
 
@@ -52,11 +56,11 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  /* Negative indent footer by it's height */
+  /* Negative indent footer by its height */
   margin: 0 auto -60px;
 }
 
-/* Set the fixed height of the footer here */
+/* Set fixed height of the footer */
 #push, #footer {
   height: 60px;
 }
@@ -64,12 +68,11 @@ html, body {
   background-color: #fff;
 }
 
-/* Lastly, apply responsive CSS fixes as necessary */
 @media (max-width: 767px) {
-#footer {
-  margin-left: -20px;
-  margin-right: -20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

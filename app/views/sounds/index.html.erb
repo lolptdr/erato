@@ -12,7 +12,8 @@
 <br />
 <br />
 <%= link_to "New Sound", new_sound_path, class: "btn btn-primary" %>
-<%= link_to "Append Sounds", 'sounds#compound', onclick: "appendSounds()", class: "btn btn-primary append-sounds" %>
+<a href="#" class="btn btn-primary append-sounds">Append Sounds</a>
+
 
 <!-- Table of Sounds -->
 <table class="table table-bordered table-hover">
@@ -43,7 +44,8 @@
 </table>
 
 <script type="text/javascript">
-  var appendSounds = function() {
+  $('.append-sounds').on('click', function(e) {
+    e.preventDefault();
     var collectSounds = [];
     if ($('.sound-pick:checked').length > 0) {
       $('.sound-pick:checked').closest('tr').each(function() {
@@ -52,6 +54,15 @@
       });
     }
     console.log("appended sounds: ", collectSounds);
-    return collectSounds;
-  };
+    $.ajax({
+      type: "POST",
+      url: '/sounds/compound',
+      data: collectSounds,
+      success: function (result) {
+        // console.log(result);
+      }
+    });
+    // Make an AJAX POST request to your compound route
+    //   Send collectSounds in your data
+  });
 </script>

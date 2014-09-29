@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "carbons#index"
+  
   resources :uploads
 
   resources :sounds do
@@ -8,5 +10,4 @@ Rails.application.routes.draw do
 
   resources :carbons, only: [:index, :new, :create, :destroy]
   resources :waveshapes, only: [:index, :new, :create, :destroy]
-  root "carbons#index"
 end
