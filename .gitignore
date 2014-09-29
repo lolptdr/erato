@@ -18,3 +18,5 @@
 # Ignore public/uploads
 /public*
 
+# Ignore transloadit config
+/config/transloadit.yml

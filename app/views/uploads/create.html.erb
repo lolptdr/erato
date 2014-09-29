@@ -1,0 +1,7 @@
+<h1>Audio waveform image</h1>
+
+<% params[:transloadit][:results][:waveform].each do |output| %>
+  <%= output[:name] %>
+  <%= image_tag output[:url] %>
+  <br />
+<% end %>

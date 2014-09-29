@@ -15,13 +15,20 @@ From Wikipedia's entry on [synesthesia](http://en.wikipedia.org/wiki/Synesthesia
 
 and [Neuroscience for Kids'](https://faculty.washington.edu/chudler/syne.html) website:
 
->he most common form, colored letters and numbers, occurs when someone always sees a certain color in response to a certain letter of the alphabet or number. For example, a synesthete (a person with synesthesia) might see the word "plane" as mint green or the number "4" as dark brown. There are also synesthetes who hear sounds in response to smell, who smell in response to touch, or who feel something in response to sight. Just about any combination of the senses is possible. 
+>The most common form, colored letters and numbers, occurs when someone always sees a certain color in response to a certain letter of the alphabet or number. For example, a synesthete (a person with synesthesia) might see the word "plane" as mint green or the number "4" as dark brown. There are also synesthetes who hear sounds in response to smell, who smell in response to touch, or who feel something in response to sight. Just about any combination of the senses is possible. 
 
 #### Image to Sound Converter
 
 
 #### Sound to Image Converter
 
-The waveform gem by @benalavi was used.
+The waveshape gem by @benalavi was used.
 
 #### Transmogrification
+
+#### Examples of Audio Encoding Witin Images
+
+PiggyPack (Steganography):
+http://9ol.es/PiggyPack.html
+http://hackaday.com/2012/02/27/this-image-contains-a-hidden-audio-track/
+

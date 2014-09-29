@@ -1,0 +1,10 @@
+
+<h1>Upload a WAV file</h1>
+<%= form_for Upload.new, :html => { :id => 'upload' } do |form| %>
+  <%= transloadit :audio_waveform %>
+  <%= form.label :file, 'File to upload' %>
+  <%= form.file_field :file, multiple: true %>
+  <%= form.submit %>
+<% end %>
+
+<%= transloadit_jquerify :upload, :wait => true %>

@@ -1,0 +1,36 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<%= link_to "Carbons", "carbons#index" %>
+<br />
+<%= link_to "Sounds", "sounds#index" %>
+
+<br />
+<br />
+<br />
+<%= link_to "Create Sounds to Waveform", new_waveshape_path, class: "btn btn-primary" %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Download Link</th>
+      <th>Preview</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @waveshapes.each do |waveshape| %>
+      <tr data-id="<%= waveshape.id %>">
+        <td><%= waveshape.name %></td>
+        <td><%= waveshape.description %></td>
+        <td><%= link_to waveshape["attachment"], waveshape.attachment_url %></td>
+        <td>
+        </td>
+        <td><%= button_to "Delete", waveshape, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{waveshape.name}' permanently?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
