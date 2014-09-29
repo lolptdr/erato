@@ -1,2 +1,7 @@
-<h1>Resized upload image</h1>
-<%= image_tag params[:transloadit][:results][:resize].first[:url] %>
+<h1>Audio waveform image</h1>
+
+<% params[:transloadit][:results][:waveform].each do |output| %>
+  <%= output[:name] %>
+  <%= image_tag output[:url] %>
+  <br />
+<% end %>

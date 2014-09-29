@@ -1,10 +1,9 @@
-<%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %>
 
-<h1>Upload an image</h1>
+<h1>Upload a WAV file</h1>
 <%= form_for Upload.new, :html => { :id => 'upload' } do |form| %>
-  <%= transloadit :image_resize %>
-  <%= form.label      :file, 'File to upload' %>
-  <%= form.file_field :file %>
+  <%= transloadit :audio_waveform %>
+  <%= form.label :file, 'File to upload' %>
+  <%= form.file_field :file, multiple: true %>
   <%= form.submit %>
 <% end %>
 
