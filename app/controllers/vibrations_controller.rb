@@ -1,0 +1,2 @@
+class VibrationsController < ApplicationController
+end
