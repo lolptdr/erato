@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Erato</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= google_webfonts_init({
+      google: ['Roboto Slab', 'Hammersmith One']
+      }) %>
+</head>
+<body>
+  <%= video_tag "sync.webm", id: "bgVideo", muted: true, autoplay: true, loop: true %>
+  <div class="erato-title">
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="pulse">
+      erato
+    </div>
+    <br />
+    <%= link_to "Enter", 'sounds#index', class: "btn enter-welcome" %>
+  </div>
+</body>
+
+
+</html>
