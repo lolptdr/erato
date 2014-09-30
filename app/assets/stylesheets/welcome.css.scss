@@ -9,23 +9,32 @@
 
 .enter-welcome {
   color: black;
+  -webkit-text-stroke: 1px black;
+     color: white;
+     text-shadow:
+         3px 3px 0 #000,
+       -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
 }
 
 .pulse {
   -webkit-animation-name: 'pulse_animation';
-  -webkit-animation-duration: 5000ms;
+  -webkit-animation-duration: 18000ms;
   -webkit-transform-origin: 50% 70%;
-  -webkit-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 2;
   -webkit-animation-timing-function: ease-out;
 }
 
 @-webkit-keyframes pulse_animation {
   0% { -webkit-transform: scale(0.8); }
-  30% { -webkit-transform: scale(0.9); }
-  40% { -webkit-transform: scale(1); }
-  50% { -webkit-transform: scale(1.2); }
+  30% { -webkit-transform: scale(1); }
+  40% { -webkit-transform: scale(1.2); }
+  50% { -webkit-transform: scale(1.4); }
   60% { -webkit-transform: scale(1.6); }
-  70% { -webkit-transform: scale(2); }
-  80% { -webkit-transform: scale(2.4); }
-  100% { -webkit-transform: scale(1); }
+  70% { -webkit-transform: scale(1.8); }
+  80% { -webkit-transform: scale(2); }
+  90% { -webkit-transform: scale(2.2); }
+  100% { -webkit-transform: scale(2.2); }
 }
