@@ -13,6 +13,7 @@ gem 'chunky_png'
 
 gem 'transloadit-rails'
 gem 'bindata'
+gem 'muse'
 
 
 group :development do
