@@ -6,7 +6,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   version :thumb do
-    process :resize_to_fill => [200, 0]
+    process :resize_to_fill => [200, 200]
   end
 
   # Choose what kind of storage to use for this uploader:
