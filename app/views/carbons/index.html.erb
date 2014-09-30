@@ -3,11 +3,7 @@
   <%= flash[:notice] %>
   </div>
 <% end %>
-<%= link_to "Sounds", "sounds#index" %>
-<%= link_to "Waveshapes", "waveshapes#index" %>
-<br />
-<br />
-<br />
+
 <%= link_to "New Carbon", new_carbon_path, class: "btn btn-primary" %>
 <table class="table table-bordered">
   <thead>
@@ -22,11 +18,21 @@
   <tbody>
     <% @carbons.each do |carbon| %>
       <tr>
-        <td><%= carbon.title %></td>
-        <td><%= carbon.description %></td>
-        <td><%= image_tag carbon.attachment_url(:thumb), alt: carbon["attachment"] if carbon.attachment? %></td>
-        <td><%= link_to carbon["attachment"], carbon.attachment_url %></td>
-        <td><%= button_to "Delete", carbon, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{carbon.title}' permanently?"} %></td>
+        <td>
+          <%= carbon.title %>
+        </td>
+        <td>
+          <%= carbon.description %>
+        </td>
+        <td>
+          <%= image_tag carbon.attachment_url(:thumb), alt: carbon["attachment"] if carbon.attachment? %>
+        </td>
+        <td>
+          <%= link_to carbon["attachment"], carbon.attachment_url %>
+        </td>
+        <td>
+          <%= button_to "Delete", carbon, method: :delete, class: "btn btn-danger", data: { confirm: "Delete '#{carbon.title}' permanently?"} %>
+        </td>
       </tr>
     <% end %>
   </tbody>
