@@ -26,9 +26,19 @@ The waveshape gem by @benalavi was used.
 
 #### Transmogrification
 
-#### Examples of Audio Encoding Witin Images
+#### Examples of Audio Encoding Within Images
 
 PiggyPack (Steganography):
 http://9ol.es/PiggyPack.html
 http://hackaday.com/2012/02/27/this-image-contains-a-hidden-audio-track/
 
+#### Examples of Image Encoding Within Audio
+
+Aphex Twin's "[Equation]" (this is the actual [name](http://i.imgur.com/BUgSLIx.png) of the song) is great example of steganography, encoding of data into another form to hide it's existence. Skip to [~5:25](http://youtu.be/M9xMuPWAZW8?t=5m25s) if you are impatient. =)
+
+[![Aphex Twin - Equation](http://img.youtube.com/vi/M9xMuPWAZW8/0.jpg)](http://www.youtube.com/watch?v=M9xMuPWAZW8)
+
+#### Unity of Senses
+
+* gustation = Sight + Smell
+* ASMR = sight + sound + hearing 
