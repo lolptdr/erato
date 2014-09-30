@@ -1,0 +1,31 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.erato-title {
+  text-align:center;
+  font-weight: bold;
+}
+
+.enter-welcome {
+  color: black;
+}
+
+.pulse {
+  -webkit-animation-name: 'pulse_animation';
+  -webkit-animation-duration: 5000ms;
+  -webkit-transform-origin: 50% 70%;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes pulse_animation {
+  0% { -webkit-transform: scale(0.8); }
+  30% { -webkit-transform: scale(0.9); }
+  40% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.2); }
+  60% { -webkit-transform: scale(1.6); }
+  70% { -webkit-transform: scale(2); }
+  80% { -webkit-transform: scale(2.4); }
+  100% { -webkit-transform: scale(1); }
+}

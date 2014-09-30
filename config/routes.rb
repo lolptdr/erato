@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "carbons#index"
+  root "welcome#index"
   
   resources :uploads
 
