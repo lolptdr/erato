@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 20140930164033) do
     t.datetime "updated_at"
   end
 
+  create_table "vibrations", force: true do |t|
+    t.string   "title"
+    t.string   "attachment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "waveshapes", force: true do |t|
     t.string   "name"
     t.text     "description"
