@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/lolptdr/muse.git
+  revision: f3290e23c3bfb0e63cb62a32e151e6bb97a5f213
+  specs:
+    muse (0.0.12)
+      bindata
+      parallel
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,9 +89,6 @@ GEM
       subexec (~> 0.2.1)
     minitest (5.4.2)
     multi_json (1.10.1)
-    muse (0.0.12)
-      bindata
-      parallel
     netrc (0.7.7)
     oily_png (1.1.2)
       chunky_png (~> 1.3.1)
@@ -176,7 +181,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick (= 3.8.0)
-  muse
+  muse!
   oily_png
   pg
   pry-byebug
