@@ -4,14 +4,16 @@
   </div>
 <% end %>
 
+<h1>Sound Uploads</h1>
+
 <%= link_to "New Sound", new_sound_path, class: "btn btn-primary" %>
-<a href="#" class="btn btn-primary append-sounds">Append Sounds</a>
+<!-- <a href="#" class="btn btn-primary append-sounds">Append Sounds</a> -->
 
 <!-- Table of Sounds -->
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Select</th>
+      <!-- <th>Select</th> -->
       <th>Name</th>
       <th>Description</th>
       <th>Download Link</th>
@@ -22,7 +24,7 @@
   <tbody>
     <% @sounds.each do |sound| %>
       <tr data-id="<%= sound.id %>">
-        <td><%= check_box_tag 'sound', 'yes', false, class: 'sound-pick' %></td>
+<!--         <td><%= check_box_tag 'sound', 'yes', false, class: 'sound-pick' %></td> -->
         <td><%= sound.name %></td>
         <td><%= sound.description %></td>
         <td><%= link_to sound["attachment"], sound.attachment_url %></td>
