@@ -1,0 +1,19 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
+<h1>Waveform Creation Examples</h1>
+<div class="container vibrations-center">
+  <%= image_tag "mozart-turkish.png", :size => "700x600" %>
+  <br /><br />
+  <audio controls class="inline" class="audio_player" controls="false" preload="true">
+    <source src="audios/turkish_march.wav" type="audio/wav">
+  </audio>
+  <%= image_tag "turkish-waveform.png", class: "turkish-waveform", style: "max-width: 100%" %>
+  <%= image_tag "wav-file-format.png", :size => "700x600" %>
+  <br /><br />
+  <%= image_tag "turkish-hex.png", :size => "700x600" %>
+</div>
