@@ -7,8 +7,8 @@ gem 'google-webfonts-rails'
 gem 'pg'
 gem 'wavefile'
 
-# gem 'ruby-audio', '~> 1.6.1'
-gem 'ruby-audio-heroku'
+gem 'ruby-audio', '~> 1.6.1'
+# gem 'ruby-audio-heroku'
 gem 'oily_png'
 gem 'chunky_png'
 
