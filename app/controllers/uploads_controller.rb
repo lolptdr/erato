@@ -21,7 +21,6 @@ class UploadsController < ApplicationController
     output = params[:transloadit][:results][:waveform]
     @upload["name"] =  output[0]["name"]
     @upload["attachment"] = output[0]["url"] # Regex \/([^\/]+)$ for file name path
-    binding.pry
     if @upload.save
       redirect_to uploads_path, notice: "New waveform '#{@upload.name}' has been uploaded."
     else
