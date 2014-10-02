@@ -1,5 +1,5 @@
 class RenameWaveformsTable < ActiveRecord::Migration
   def change
-    rename_table :waveshapes, :waveshapes
+    rename_table :waveforms, :waveshapes
   end
 end
