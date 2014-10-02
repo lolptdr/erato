@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001183227) do
+ActiveRecord::Schema.define(version: 20141002212534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141001183227) do
     t.string   "name"
     t.string   "attachment"
     t.string   "description"
+    t.string   "audio_attachment"
   end
 
   create_table "vibrations", force: true do |t|

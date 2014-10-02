@@ -17,10 +17,11 @@ class UploadsController < ApplicationController
       # puts output[:name]
       # puts output[:url]
     # end 
+    @upload["audio_attachment"] = params[:transloadit][:uploads][0][:url]
     output = params[:transloadit][:results][:waveform]
     @upload["name"] =  output[0]["name"]
     @upload["attachment"] = output[0]["url"] # Regex \/([^\/]+)$ for file name path
-    # binding.pry
+    binding.pry
     if @upload.save
       redirect_to uploads_path, notice: "New waveform '#{@upload.name}' has been uploaded."
     else
