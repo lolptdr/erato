@@ -1,10 +1,24 @@
-
-<h1>Upload a WAV file</h1>
-<%= form_for Upload.new, :html => { :id => 'upload' } do |form| %>
-  <%= transloadit :audio_waveform %>
-  <%= form.label :file, 'File to upload' %>
-  <%= form.file_field :file, multiple: true %>
-  <%= form.submit %>
+<% if !@upload.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @upload.errors.full_message.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
-<%= transloadit_jquerify :upload, :wait => true %>
+<div class="well">
+  <h1>Upload a WAV file</h1>
+  <%= form_for @upload, :html => { :id => 'upload' } do |f| %>
+    <%= transloadit :audio_waveform %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br />
+    <%= f.label :file, 'File to upload' %>
+    <%= f.file_field :file %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= transloadit_jquerify :upload, :wait => true %>
+</div>

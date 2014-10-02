@@ -6,6 +6,10 @@ class CarbonsController < ApplicationController
   def new
     @carbon = Carbon.new
   end
+  
+  def show
+    @carbon = Carbon.find(params[:id])
+  end
 
   def create
     @carbon = Carbon.new(carbon_params)
