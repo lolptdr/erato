@@ -19,10 +19,7 @@ and [Neuroscience for Kids'](https://faculty.washington.edu/chudler/syne.html) w
 
 #### Image to Sound Converter
 
-
 #### Sound to Image Converter
-
-The waveshape gem by @benalavi was used.
 
 #### Transmogrification
 
