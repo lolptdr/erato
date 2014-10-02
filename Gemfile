@@ -14,7 +14,7 @@ gem 'chunky_png'
 gem 'transloadit-rails'
 gem 'bindata'
 gem 'muse', :git => "https://github.com/lolptdr/muse.git"
-
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'better_errors'
